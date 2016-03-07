@@ -13,7 +13,11 @@ ssh-add $HOME/.ssh/github_rsa
 git config --global user.name "$name"
 git config --global user.email "$email"
 
-# Update config file
+# Update .ssh/config file
 echo Host github.com >> $HOME/.ssh/config
+echo HostName github.com > $HOME/.ssh/config
+echo User git > $HOME/.ssh/config
+echo IdentityFile ~/.ssh/github_rsa > $HOME/.ssh/config
+
 # Test connecting to github
 ssh -T git@github.com
