@@ -14,9 +14,11 @@ curl -fsSL https://get.docker.com/ | sh
 # https://docs.docker.com/engine/installation/linux/ubuntulinux/
 sudo usermod -aG docker ubuntu
 
-
-# Install node and npm
-
+# Install node and npm using nvm: node version manager
+# https://github.com/creationix/nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+nvm install 5.0
+nvm use 5.0
 
 # git pull and install dotfiles
 cd $HOME
