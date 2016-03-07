@@ -20,6 +20,14 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | b
 nvm install 5.0
 nvm use 5.0
 
+# Install npm packages
+npm install -g grunt-cli
+npm install -g bower
+# Yeoman scaffolding tool and angular-fullstack code generator
+# http://yeoman.io/
+npm install -g yo generator-angular-fullstack
+# need to install additional packages for PhantomJS ? http://phantomjs.org/download.html
+
 # git pull and install dotfiles
 cd $HOME
 if [ -d ./dotfiles/ ]; then
@@ -34,3 +42,10 @@ ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
+
+# Create repositories directory
+cd $HOME
+if [ -d ./repositories/ ]; then
+    mv repositories repositories.old
+fi
+mkdir $HOME/repositories
