@@ -22,12 +22,13 @@ nvm install 5.0
 nvm use 5.0
 
 # Install npm packages
-npm install -g grunt-cli
-npm install -g bower
+npm install -g grunt-cli bower
 # Yeoman scaffolding tool and angular-fullstack code generator
 # http://yeoman.io/
 npm install -g yo generator-angular-fullstack
-# need to install additional packages for PhantomJS ? http://phantomjs.org/download.html
+### need to install additional packages for PhantomJS ? http://phantomjs.org/download.html
+
+### Install heroku ?
 
 # git pull and install dotfiles
 cd $HOME
