@@ -20,4 +20,4 @@ echo User git >> $HOME/.ssh/config
 echo IdentityFile ~/.ssh/github_rsa >> $HOME/.ssh/config
 
 # End
-echo Add generated github_rsa key to your github account and run "ssh -T git@github.com" command to test
+echo Add generated github_rsa key to your github account and run \"ssh -T git@github.com\" command to test
