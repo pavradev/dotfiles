@@ -15,9 +15,9 @@ git config --global user.email "$email"
 
 # Update .ssh/config file
 echo Host github.com >> $HOME/.ssh/config
-echo HostName github.com > $HOME/.ssh/config
-echo User git > $HOME/.ssh/config
-echo IdentityFile ~/.ssh/github_rsa > $HOME/.ssh/config
+echo HostName github.com >> $HOME/.ssh/config
+echo User git >> $HOME/.ssh/config
+echo IdentityFile ~/.ssh/github_rsa >> $HOME/.ssh/config
 
-# Test connecting to github
-ssh -T git@github.com
+# End
+echo Add generated github_rsa key to your github account and run "ssh -T git@github.com" command to test
