@@ -19,9 +19,12 @@ npm install -g grunt-cli bower
 # Yeoman scaffolding tool and angular-fullstack code generator
 # http://yeoman.io/
 npm install -g yo generator-angular-fullstack
-### need to install additional packages for PhantomJS ? http://phantomjs.org/download.html
+# Need libfontconfig package to run PhantomJS
+sudo apt-get install libfontconfig
 
-### Install heroku ?
+# Install heroku toolbelt
+# https://toolbelt.heroku.com/debian
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 # git pull and install dotfiles
 #cd $HOME
