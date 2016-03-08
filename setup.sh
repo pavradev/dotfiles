@@ -20,26 +20,11 @@ npm install -g grunt-cli bower
 # http://yeoman.io/
 npm install -g yo generator-angular-fullstack
 # Need libfontconfig package to run PhantomJS
-sudo apt-get install libfontconfig
+sudo apt-get install -y libfontconfig
 
 # Install heroku toolbelt
 # https://toolbelt.heroku.com/debian
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-
-# git pull and install dotfiles
-#cd $HOME
-#if [ -d ./dotfiles/ ]; then
-#    mv dotfiles dotfiles.old
-#fi
-#if [ -d .emacs.d/ ]; then
-#    mv .emacs.d .emacs.d~
-#fi
-#git clone https://github.com/startup-class/dotfiles.git
-#ln -sb dotfiles/.screenrc .
-#ln -sb dotfiles/.bash_profile .
-#ln -sb dotfiles/.bashrc .
-#ln -sb dotfiles/.bashrc_custom .
-#ln -sf dotfiles/.emacs.d .
 
 # Create repositories directory
 cd $HOME
@@ -54,3 +39,6 @@ curl -fsSL https://get.docker.com/ | sh
 # Run docker without sudo (need to re-login to apply changes)
 # https://docs.docker.com/engine/installation/linux/ubuntulinux/
 sudo usermod -aG docker $USER
+
+# TODO: Add configuration as well
+# Have a look at https://github.com/startup-class/setup
