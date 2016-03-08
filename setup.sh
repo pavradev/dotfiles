@@ -7,13 +7,6 @@ sudo apt-get install -y curl
 # Install git
 sudo apt-get install -y git
 
-# Install and configure docker
-# https://docs.docker.com/linux/step_one/
-curl -fsSL https://get.docker.com/ | sh
-# Run docker without sudo (need to re-login to apply changes)
-# https://docs.docker.com/engine/installation/linux/ubuntulinux/
-sudo usermod -aG docker ubuntu
-
 # Install node and npm using nvm: node version manager
 # https://github.com/creationix/nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
@@ -51,3 +44,10 @@ if [ -d ./repositories/ ]; then
     mv repositories repositories.old
 fi
 mkdir $HOME/repositories
+
+# Install and configure docker
+# https://docs.docker.com/linux/step_one/
+curl -fsSL https://get.docker.com/ | sh
+# Run docker without sudo (need to re-login to apply changes)
+# https://docs.docker.com/engine/installation/linux/ubuntulinux/
+sudo usermod -aG docker ubuntu
