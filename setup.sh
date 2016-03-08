@@ -47,7 +47,7 @@ mkdir $HOME/repositories
 
 # Install and configure docker
 # https://docs.docker.com/linux/step_one/
-##curl -fsSL https://get.docker.com/ | sh
+curl -fsSL https://get.docker.com/ | sh
 # Run docker without sudo (need to re-login to apply changes)
 # https://docs.docker.com/engine/installation/linux/ubuntulinux/
-##sudo usermod -aG docker ubuntu
+sudo usermod -aG docker $USER
