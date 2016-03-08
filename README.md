@@ -14,6 +14,10 @@ cd $HOME
 git clone https://github.com/pavel-r/dev-env-setup.git
 ./dev-env-setup/setup.sh
 ```
+Starting mondodb
+```bash
+docker run -p 27017:27017 --name mongo-swedic -d mongo
+```
 ## Known issues
 
 * `npm install` can cause ENOM (end of memory) on machine with <2 GB RAM. Possible solution is to [create swap file](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04).
