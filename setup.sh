@@ -11,7 +11,7 @@ sudo apt-get install -y git
 # https://github.com/creationix/nvm
 curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | sh
 export NVM_DIR="~/.nvm"
-source ~/.nvm/nvm.sh
+. ~/.nvm/nvm.sh
 nvm install 4.0
 nvm use 4.0
 
