@@ -11,8 +11,8 @@ sudo apt-get install -y git
 # https://github.com/creationix/nvm
 curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | sh
 source ~/.nvm/nvm.sh
-nvm install 4.0
-nvm use 4.0
+nvm install 5.0
+nvm use 5.0
 
 # Install npm packages
 npm install -g grunt-cli bower
