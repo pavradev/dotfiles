@@ -10,8 +10,7 @@ sudo apt-get install -y git
 # Install node and npm using nvm: node version manager
 # https://github.com/creationix/nvm
 curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | sh
-export NVM_DIR="~/.nvm"
-. ~/.nvm/nvm.sh
+source ~/.nvm/nvm.sh
 nvm install 4.0
 nvm use 4.0
 
