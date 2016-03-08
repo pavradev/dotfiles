@@ -17,7 +17,7 @@ sudo usermod -aG docker ubuntu
 # Install node and npm using nvm: node version manager
 # https://github.com/creationix/nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-source $HOME/.nvm/nvm.sh
+. ~/.nvm/nvm.sh
 nvm install 5.0
 nvm use 5.0
 
