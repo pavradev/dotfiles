@@ -42,3 +42,6 @@ sudo usermod -aG docker $USER
 
 # TODO: Add configuration as well
 # Have a look at https://github.com/startup-class/setup
+# Add screen configuration
+cd $HOME
+wget raw.github.com/startup-class/dotfiles/master/.screenrc -O .screenrc
