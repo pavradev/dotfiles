@@ -26,3 +26,7 @@ docker run -it -d -p 80:80 -v /home/ubuntu/repositories/:/workspace/ kdelfour/cl
 ## Known issues
 
 * `npm install` can cause ENOM (end of memory) on machine with <2 GB RAM. Possible solution is to [create swap file](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04).
+
+# Links
+[startup-class](https://github.com/startup-class/setup)
+[aws command line tools](http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/set-up-ec2-cli-linux.html)
