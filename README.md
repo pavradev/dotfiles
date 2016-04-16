@@ -1,7 +1,5 @@
-# dev-env-setup
-Setup development environment inside AWS instance
-
-Run this
+# Remote setup
+Setup development environment inside AWS instance. Run the following scripts inside your EC2 instance:
 ```bash
 cd $HOME
 curl -s -o setup.sh https://raw.githubusercontent.com/pavel-r/dev-env-setup/master/setup.sh
@@ -34,7 +32,7 @@ alias sshaws='ssh -i ~/.ssh/awstest.pem ubuntu@$(ec2-dns)'
 alias ec2-stop='aws ec2 start-instances --instance-ids {your-id}'
 alias ec2-start='aws ec2 stop-instances --instance-ids {your-id}'
 ```
-These commands will halp to quickly start and stop your development environment in AWS
+These commands will help to quickly start and stop your development environment in AWS
 
 # Links
-[startup-class](https://github.com/startup-class/setup)
+* [startup-class](https://github.com/startup-class/setup)
