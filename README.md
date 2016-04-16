@@ -1,5 +1,5 @@
 # dev-env-setup
-Setup development environment
+Setup development environment inside AWS instance
 
 Run this
 ```bash
@@ -22,11 +22,19 @@ Starting cloud9 IDE as described [here](https://github.com/kdelfour/cloud9-docke
 ```bash
 docker run -it -d -p 80:80 -v /home/ubuntu/repositories/:/workspace/ kdelfour/cloud9-docker
 ```
-
 ## Known issues
 
 * `npm install` can cause ENOM (end of memory) on machine with <2 GB RAM. Possible solution is to [create swap file](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04).
 
+# Local machine setup
+Install [AWS CLI](https://aws.amazon.com/cli/) and add aliases to `.bashrc`:
+```bash
+alias ec2-dns='aws ec2 describe-instances --region {region} --instance-ids {your-id} | grep -m 1 -o ec2-.*\.compute\.amazonaws\.com'
+alias sshaws='ssh -i ~/.ssh/awstest.pem ubuntu@$(ec2-dns)'
+alias ec2-stop='aws ec2 start-instances --instance-ids {your-id}'
+alias ec2-start='aws ec2 stop-instances --instance-ids {your-id}'
+```
+These commands will halp to quickly start and stop your development environment in AWS
+
 # Links
 [startup-class](https://github.com/startup-class/setup)
-[aws command line tools](http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/set-up-ec2-cli-linux.html)
