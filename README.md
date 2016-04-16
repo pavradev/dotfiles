@@ -27,10 +27,14 @@ docker run -it -d -p 80:80 -v /home/ubuntu/repositories/:/workspace/ kdelfour/cl
 # Local machine setup
 Install [AWS CLI](https://aws.amazon.com/cli/) and add aliases to `.bashrc`:
 ```bash
-alias ec2-dns='aws ec2 describe-instances --region {region} --instance-ids {your-id} | grep -m 1 -o ec2-.*\.compute\.amazonaws\.com'
-alias sshaws='ssh -i ~/.ssh/awstest.pem ubuntu@$(ec2-dns)'
 alias ec2-stop='aws ec2 start-instances --instance-ids {your-id}'
 alias ec2-start='aws ec2 stop-instances --instance-ids {your-id}'
+# gives information about you ec2 instance
+alias ec2-describe='aws ec2 describe-instances --region {region} --instance-ids {your-id}'
+# prints ec2 instance public dns
+alias ec2-dns='ec2-describe | grep -m 1 -o ec2-.*\.compute\.amazonaws\.com'
+# ssh into your ec2 machine
+alias sshaws='ssh -i ~/.ssh/awstest.pem ubuntu@$(ec2-dns)'
 ```
 These commands will help to quickly start and stop your development environment in AWS
 
