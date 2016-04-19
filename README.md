@@ -2,7 +2,7 @@
 Setup development environment inside AWS instance. Run the following scripts inside your EC2 instance:
 ```bash
 cd $HOME
-curl -s -o setup.sh https://raw.githubusercontent.com/pavel-r/dev-env-setup/master/setup.sh
+wget https://raw.githubusercontent.com/pavel-r/dev-env-setup/master/setup.sh
 chmod +x setup.sh
 ./setup.sh
 ```
