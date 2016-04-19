@@ -34,7 +34,7 @@ alias ec2-describe='aws ec2 describe-instances --region {region} --instance-ids 
 # prints ec2 instance public dns
 alias ec2-dns='ec2-describe | grep -m 1 -o ec2-.*\.compute\.amazonaws\.com'
 # ssh into your ec2 machine
-alias sshaws='ssh -i ~/.ssh/awstest.pem ubuntu@$(ec2-dns)'
+alias sshaws='ssh -i ~/.ssh/{your-key}.pem ubuntu@$(ec2-dns)'
 ```
 These commands will help to quickly start and stop your development environment in AWS
 
