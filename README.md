@@ -18,7 +18,7 @@ docker run -p 27017:27017 --name mongo-swedic -d mongo
 ```
 Starting cloud9 IDE as described [here](https://github.com/kdelfour/cloud9-docker)
 ```bash
-docker run -it -d -p 80:80 -v /home/ubuntu/repositories/:/workspace/ kdelfour/cloud9-docker
+docker run -it -d -p 80:80 -v /home/ubuntu/repositories/:/workspace/ --name cloud9 kdelfour/cloud9-docker
 ```
 ## Known issues
 
