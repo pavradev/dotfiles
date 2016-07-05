@@ -14,7 +14,7 @@ git clone https://github.com/pavel-r/dev-env-setup.git
 ```
 For node applications:
 ```bash
-docker run -it --rm -p 9000:9000 -v $PWD:/data digitallyseamless/nodejs-bower-grunt
+docker run -it --rm -p 9000:9000 -e "NODE_ENV=docker" -v $PWD:/data digitallyseamless/nodejs-bower-grunt
 ```
 Starting mondodb
 ```bash
