@@ -12,6 +12,10 @@ cd $HOME
 git clone https://github.com/pavel-r/dev-env-setup.git
 ./dev-env-setup/setup.sh
 ```
+For node applications:
+```bash
+docker run -it --rm -p 9000:9000 -v $PWD:/data digitallyseamless/nodejs-bower-grunt
+```
 Starting mondodb
 ```bash
 docker run -p 27017:27017 --name mongo-swedic -d mongo
@@ -28,16 +32,15 @@ docker run -it -d -p 80:80 -v /home/ubuntu/repositories/:/workspace/ --name clou
 Create `credentials` file and save it under `~/.aws/credentials`.
 Install [AWS CLI](https://aws.amazon.com/cli/) and add aliases to `.bash_aliases`:
 ```bash
-alias ec2-stop='aws ec2 start-instances --region {region} --instance-ids {your-id}'
-alias ec2-start='aws ec2 stop-instances --region {region} --instance-ids {your-id}'
+alias ec2-stop='aws ec2 start-instances --region eu-west-1 --instance-ids {your-id}'
+alias ec2-start='aws ec2 stop-instances --region eu-west-1 --instance-ids {your-id}'
 # gives information about you ec2 instance
-alias ec2-describe='aws ec2 describe-instances --region {region} --instance-ids {your-id}'
+alias ec2-describe='aws ec2 describe-instances --region eu-west-1 --instance-ids {your-id}'
 # prints ec2 instance public dns
 alias ec2-dns='echo "$(ec2-describe)" | grep -m 1 -o ec2-.*\.compute\.amazonaws\.com'
 # ssh into your ec2 machine
 alias sshaws='ssh -i ~/.ssh/{your-key}.pem ubuntu@$(ec2-dns)'
 ```
-Example of region is eu-west-1.
 
 Alternatively, you can run [docker-aws-cli](https://hub.docker.com/r/pebbletech/docker-aws-cli/) withou installing AWS CLI. Add an extra alias in front of others then:
 ```bash
