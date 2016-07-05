@@ -1,7 +1,36 @@
-echo -n "Enter your name and press [ENTER]: "
-read name
-echo -n "Enter your email and press [ENTER]: "
-read email
+#!/bin/bash
+# Create github ssh key and set configuration
+
+# Read command line parameters --name= --email=
+for i in "$@"
+do
+case $i in
+    --name=*)
+    name="${i#*=}"
+    shift # past argument=value
+    ;;
+    --email=*)
+    email="${i#*=}"
+    shift # past argument=value
+    ;;
+    *)
+            # unknown option
+    ;;
+esac
+done
+
+echo "Name is ${name}"
+echo "Email is ${email}"
+
+# If no command line parameters specify then ask user
+if [ -z "${name}" ]; then
+    echo -n "Enter your name and press [ENTER]: "
+    read name
+fi
+if [ -z "${email}" ]; then
+    echo -n "Enter your email and press [ENTER]: "
+    read email
+fi
 
 # TODO Check if github_rsa already exist
 ssh-keygen -t rsa -b 4096 -C "$email" -N "" -f $HOME/.ssh/github_rsa
