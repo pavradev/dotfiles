@@ -33,7 +33,7 @@ alias ec2-start='aws ec2 stop-instances --region {region} --instance-ids {your-i
 # gives information about you ec2 instance
 alias ec2-describe='aws ec2 describe-instances --region {region} --instance-ids {your-id}'
 # prints ec2 instance public dns
-alias ec2-dns='ec2-describe | grep -m 1 -o ec2-.*\.compute\.amazonaws\.com'
+alias ec2-dns='echo "$(ec2-describe)" | grep -m 1 -o ec2-.*\.compute\.amazonaws\.com'
 # ssh into your ec2 machine
 alias sshaws='ssh -i ~/.ssh/{your-key}.pem ubuntu@$(ec2-dns)'
 ```
