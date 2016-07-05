@@ -9,18 +9,18 @@ sudo apt-get install -y git
 
 # Install node and npm using nvm: node version manager
 # https://github.com/creationix/nvm
-curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | sh
-source ~/.nvm/nvm.sh
-nvm install 5.0
-nvm use 5.0
+#curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | sh
+#source ~/.nvm/nvm.sh
+#nvm install 5.0
+#nvm use 5.0
 
 # Install npm packages
-npm install -g grunt-cli bower
+#npm install -g grunt-cli bower
 # Yeoman scaffolding tool and angular-fullstack code generator
 # http://yeoman.io/
-npm install -g yo generator-angular-fullstack
+#npm install -g yo generator-angular-fullstack
 # Need libfontconfig package to run PhantomJS
-sudo apt-get install -y libfontconfig
+#sudo apt-get install -y libfontconfig
 
 # Install heroku toolbelt
 # https://toolbelt.heroku.com/debian
