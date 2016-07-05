@@ -25,7 +25,8 @@ docker run -it -d -p 80:80 -v /home/ubuntu/repositories/:/workspace/ --name clou
 * `npm install` can cause ENOM (end of memory) on machine with <2 GB RAM. Possible solution is to [create swap file](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04).
 
 # Local machine setup
-Install [AWS CLI](https://aws.amazon.com/cli/) and add aliases to `.bashrc`:
+Create `credentials` file and save it under `~/.aws/credentials`.
+Install [AWS CLI](https://aws.amazon.com/cli/) and add aliases to `.bash_aliases`:
 ```bash
 alias ec2-stop='aws ec2 start-instances --region {region} --instance-ids {your-id}'
 alias ec2-start='aws ec2 stop-instances --region {region} --instance-ids {your-id}'
@@ -36,7 +37,15 @@ alias ec2-dns='ec2-describe | grep -m 1 -o ec2-.*\.compute\.amazonaws\.com'
 # ssh into your ec2 machine
 alias sshaws='ssh -i ~/.ssh/{your-key}.pem ubuntu@$(ec2-dns)'
 ```
-These commands will help to quickly start and stop your development environment in AWS
+Example of region is eu-west-1.
 
+Alternatively, you can run [docker-aws-cli](https://hub.docker.com/r/pebbletech/docker-aws-cli/) withou installing AWS CLI. Add an extra alias in front of others then:
+```bash
+alias aws='docker run --rm -v ${HOME}/.aws/credentials:/root/.aws/credentials pebbletech/docker-aws-cli aws'
+```
+or if you use proxy
+```bash
+alias aws='docker run --rm -e "http_proxy={proxy_server}" -v ${HOME}/.aws/credentials:/root/.aws/credentials pebbletech/docker-aws-cli aws'
+```
 # Links
 * [startup-class](https://github.com/startup-class/setup)
