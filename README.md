@@ -12,14 +12,6 @@ cd $HOME
 git clone https://github.com/pavel-r/dev-env-setup.git
 ./dev-env-setup/setup.sh
 ```
-For node applications:
-```bash
-docker run -it --rm -p 9000:9000 -e "NODE_ENV=docker" -v $PWD:/data digitallyseamless/nodejs-bower-grunt
-```
-Starting mondodb
-```bash
-docker run -p 27017:27017 --name mongo-swedic -d mongo
-```
 Starting cloud9 IDE as described [here](https://github.com/kdelfour/cloud9-docker)
 ```bash
 docker run -it -d -p 80:80 -v /home/ubuntu/repositories/:/workspace/ --name cloud9 kdelfour/cloud9-docker
