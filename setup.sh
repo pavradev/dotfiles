@@ -15,7 +15,7 @@ sudo apt-get install -y git
 
 # Install heroku toolbelt
 # https://toolbelt.heroku.com/debian
-#wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 # Create repositories directory
 cd $HOME
