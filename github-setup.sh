@@ -47,10 +47,18 @@ git config --global alias.lg2 "log --graph --abbrev-commit --decorate --format=f
 git config --global alias.lg "!(git lg1)"
 
 # Update .ssh/config file
+echo '## Github configuration ##' >> $HOME/.ssh/config
 echo Host github.com >> $HOME/.ssh/config
 echo HostName github.com >> $HOME/.ssh/config
 echo User git >> $HOME/.ssh/config
 echo IdentityFile ~/.ssh/github_rsa >> $HOME/.ssh/config
+echo '## Bitbucket configuration ##' >> $HOME/.ssh/config
+echo Host bitbucket.org >> $HOME/.ssh/config
+echo HostName bitbucket.org >> $HOME/.ssh/config
+echo User git >> $HOME/.ssh/config
+echo IdentityFile ~/.ssh/github_rsa >> $HOME/.ssh/config
+
+
 
 # End
 echo Add generated github_rsa key to your github account and run \"ssh -T git@github.com\" command to test
