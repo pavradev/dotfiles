@@ -31,11 +31,11 @@ alias ec2-describe='aws ec2 describe-instances --region eu-west-1 --instance-ids
 # prints ec2 instance public dns
 alias ec2-dns='echo "$(ec2-describe)" | grep -m 1 -o ec2-.*\.compute\.amazonaws\.com'
 # ssh into your ec2 machine
-alias sshaws='ssh -i ~/.ssh/{your-key}.pem ubuntu@$(ec2-dns)'
+alias sshaws='ssh -i ~/.ssh/aws.pem ubuntu@$(ec2-dns)'
 ```
 If you need port forwarding, sshaws alias might look like this:
 ```bash
-alias sshaws='ssh -i ~/.ssh/{your-key}.pem -L 80:localhost:80 -L 9000:localhost:9000 ubuntu@$(ec2-dns)'
+alias sshaws='sudo ssh -i ~/.ssh/aws.pem -L 80:localhost:80 -L 9000:localhost:9000 ubuntu@$(ec2-dns)'
 ```
 Alternatively, you can run [docker-aws-cli](https://hub.docker.com/r/pebbletech/docker-aws-cli/) withou installing AWS CLI. Add an extra alias in front of others then:
 ```bash
