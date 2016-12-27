@@ -1,0 +1,33 @@
+#!/bin/bash
+
+function docker_min {
+    # minimize docker output
+    docker "$@" |
+    sed '
+        s/CONTAINER ID/ID/;
+        s/ seconds/s/g;
+        s/ minutes/m/g;
+        s/ hours/h/g;
+        s/ days/d/g;
+        s/About a minute/1m/g;
+        s/About an hour/1h/g;
+        s/Exited (\([0-9][0-9]*\)) \(.*\)ago/Ex(\1) \2/;
+        s/0.0.0.0://g;
+        ' |
+    sed 's/   */;/g' |
+    column -s\; -t
+}
+
+function loop {
+    # repean command infinitely with 1 sec interval
+    while :
+    do
+    	clear
+    	"$@"
+    	sleep 1
+    done
+}
+
+function dps {
+    docker_min ps -a --format 'table {{printf "%.3s" .ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}'
+}
