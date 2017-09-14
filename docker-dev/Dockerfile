@@ -16,5 +16,5 @@ RUN useradd --create-home --shell /bin/bash docker && \
   chown -R docker:docker /repository
 USER docker
 
-RUN ./dev-env-setup/github-setup.sh --name=pavel-r --email=rabeckijps@gmail.com
+RUN ./dev-env-setup/github-setup.sh --name=pavradev --email=rabeckijps@gmail.com
 WORKDIR /repository
