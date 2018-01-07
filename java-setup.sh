@@ -2,9 +2,8 @@
 
 # Setup java
 mkdir -p ~/local/java && cd ~/local/java
-wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz
-tar xzvf jdk-8u101-linux-x64.tar.gz
-echo 'export JAVA_HOME="/home/ubuntu/local/java/jdk1.8.0_101"' >> ~/.bash_profile
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u141-b15/336fa29ff2bb4ef291e347e091f7f4a7/jdk-8u141-linux-x64.tar.gz
+echo 'export JAVA_HOME="/home/ubuntu/local/java/jdk1.8.0_141"' >> ~/.bash_profile
 
 # Setup maven
 mkdir -p ~/local/maven && cd ~/local/maven
