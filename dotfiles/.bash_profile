@@ -9,7 +9,4 @@ fi
 #  - These are line by line so that you can kill one without affecting the others.
 #  - Lowest priority first, highest priority last.
 export PATH=$PATH
-#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-#export M2_HOME=/usr/local/apache-maven-3.3.9
-#export M2=$M2_HOME/bin
-#export PATH=$M2:$PATH
+

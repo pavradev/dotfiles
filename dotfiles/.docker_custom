@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function docker_min {
+docker_min() {
     # minimize docker output
     docker "$@" |
     sed '
@@ -18,7 +18,7 @@ function docker_min {
     column -s\; -t
 }
 
-function loop {
+loop() {
     # repean command infinitely with 1 sec interval
     while :
     do
@@ -28,6 +28,7 @@ function loop {
     done
 }
 
-function dps {
+# Listing running docker containers
+dps() {
     docker_min ps -a --format 'table {{printf "%.3s" .ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}'
 }

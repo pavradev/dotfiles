@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Switching between jdk versions
+jdk() {
+    if [ -z "$1" ]; then
+        java -version
+    else
+        version=$1
+        unset JAVA_HOME
+        export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+        java -version
+    fi
+}
