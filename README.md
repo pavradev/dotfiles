@@ -3,12 +3,15 @@ Setup local development environment on Mac or Linux
 
 # How to use
 
-Copy git repository to your home directory and run setup.sh
+Run the following commands:
 
 '''sh
     cd $HOME
-    git clone https://github.com/startup-class/dotfiles.git
-    setup.sh
+    git clone https://github.com/pavradev/dev-env-setup.git
+    ln -s dotfiles/.bashrc .
+    ln -s dotfiles/.docker_custom .
+    ln -s dotfiles/.java_custom .
+    ln -s dotfiles/.gitconfig .
 '''
 
 # Links
