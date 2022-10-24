@@ -7,7 +7,7 @@ Run the following commands:
 
 '''sh
     cd $HOME
-    git clone https://github.com/pavradev/dev-env-setup.git
+    git clone https://github.com/pavradev/dotfiles.git
     ln -s dotfiles/.bashrc .
     ln -s dotfiles/.docker_custom .
     ln -s dotfiles/.java_custom .
